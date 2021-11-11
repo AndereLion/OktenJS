@@ -50,6 +50,7 @@ let person = `${firstName} ${lastName} ${middleName}`;
 let myName = prompt("Введіть ваше ім'я!");
 let myPatronymicName = prompt("Введіть як вас по батькові!");
 let myAge = prompt("Введіть ваш вік!");
+document.write(`<h2>Вітаю ${myName} ${myPatronymicName}. Тобі ${myAge} років.</h2>`);
 
 /*
 - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
