@@ -1,0 +1,18 @@
+body{
+    background: black;
+}
+.wrap{
+    margin: 0 auto;
+    width: 1200px;
+    background: silver;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.post-card{
+    width: 17%;
+    text-align: justify;
+    margin: 10px;
+
+}
+

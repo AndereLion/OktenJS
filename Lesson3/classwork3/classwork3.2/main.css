@@ -1,0 +1,43 @@
+body {
+    background: silver;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divStyle2 {
+    flex-direction: column;
+}
+
+.divStyle, .divStyle2 {
+    display: flex;
+    width: 700px;
+    border: gray solid 2px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.divStyle2 p {
+    width: 90%;
+}
+
+.divStyleImg {
+    height: 100px;
+}
+
+.divStyle2Img {
+    width: 100px;
+}
+.wrapProduct-card{
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product-card{
+    width: 40%;
+
+}
+.product-image{
+    height: 200px;
+}

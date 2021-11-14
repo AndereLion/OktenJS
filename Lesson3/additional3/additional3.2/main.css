@@ -1,0 +1,14 @@
+body{
+    background: black;
+}
+.users-box{
+    margin: 0 auto;
+    width: 1200px;
+    background: silver;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.user-block{
+    width: 35%;
+}
