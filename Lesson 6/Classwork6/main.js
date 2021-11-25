@@ -1,4 +1,3 @@
-
 // - Дано список імен.
 //     let n1 = 'Harry..Potter'
 // let n2 = 'Ron---Whisley'
@@ -7,14 +6,17 @@
 // let n1 = 'Harry Potter'
 // let n2 = 'Ron Whisley'
 // let n3 = 'Hermione Granger'
+// let makeValidName = (str) => {
+//     let arrTmp = str.split('');
+//         for (let i = 0; i < arrTmp.length; i++) {
+//             if (arrTmp[i] === '-' || arrTmp[i] === '_' || arrTmp[i] === '.') {
+//                 arrTmp[i] = ' ';
+//             }
+//     }
+//     return arrTmp.join('');
+// };
 let makeValidName = (str) => {
-    let arrTmp = str.split('');
-    for (let i = 0; i < arrTmp.length; i++) {
-        if (arrTmp[i] === '-' || arrTmp[i] === '_' || arrTmp[i] === '.') {
-            arrTmp[i] = ' ';
-        }
-    }
-    return arrTmp.join('');
+    return str.replaceAll('.', ' ').replaceAll('-', ' ').replaceAll('_', ' ');
 };
 let n1 = 'Harry..Potter';
 let n2 = 'Ron---Whisley';
@@ -92,17 +94,17 @@ console.log(`Відсортував масив за спаданням за mont
 
 console.log(
     coursesAndDurationArray
-        .sort((a, b) =>b.monthDuration-a.monthDuration)
-        .filter(value => value.monthDuration>5));
+        .sort((a, b) => b.monthDuration - a.monthDuration)
+        .filter(value => value.monthDuration > 5));
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
-    // document.writeln(cutString('наслаждение',3))
+// document.writeln(cutString('наслаждение',3))
 // [нас,лаж,ден,ие]
-let cutString= (str, n)=>{
-    let arr=[];
-    for (let i = 0; i <str.length ; i=i+3) {
-       arr.push(str.slice(i,i+n));
+let cutString = (str, n) => {
+    let arr = [];
+    for (let i = 0; i < str.length; i = i + 3) {
+        arr.push(str.slice(i, i + n));
     }
-return arr;
+    return arr;
 };
 document.writeln(`<br>Написав функцію cutString(str, n), котра ділить стрічку на підстрічки, довжиною в n символів.
-<br><b> ${cutString('наслаждение',3)}</b>`);
+<br><b> ${cutString('наслаждение', 3)}</b>`);
