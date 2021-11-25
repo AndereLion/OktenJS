@@ -1,4 +1,4 @@
-//
+
 // - Дано список імен.
 //     let n1 = 'Harry..Potter'
 // let n2 = 'Ron---Whisley'
@@ -85,28 +85,15 @@ let coursesAndDurationArray = [
 ];
 // -- відсортувати його за спаданням за monthDuration
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-let descendingMoreThen5Month = (arr) => {
-    let arrTmp = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].monthDuration < 5) {
-            arr.splice(i, 1);
-        }
-    }
-    for (let i = 0; i < arr.length-1; i++) {
-        for (let j = i+1; j < arr.length; j++) {
-            if (arr[i].monthDuration < arr[j].monthDuration) {
-                arrTmp[0] = arr[i];
-                arr[i] = arr[j];
-                arr[j] = arrTmp[0];
-            }
-        }
-    }
-    return arr;
-};
+
 console.log(`Відсортував масив за спаданням за monthDuration
 відфільтрував , залишивши тільки курси з тривалістю більше 5 місяців
 `);
-console.log(descendingMoreThen5Month(coursesAndDurationArray));
+
+console.log(
+    coursesAndDurationArray
+        .sort((a, b) =>b.monthDuration-a.monthDuration)
+        .filter(value => value.monthDuration>5));
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
     // document.writeln(cutString('наслаждение',3))
 // [нас,лаж,ден,ие]

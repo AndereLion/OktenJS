@@ -108,21 +108,9 @@ let coursesArray = [
             'docker', 'git', 'sass']
     }
 ];
-let modulesDescendingSort = (arr) => {
-    for (let i = 0; i < arr.length - 1; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i].modules.length < arr[j].modules.length) {
-                let tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-            }
-        }
-    }
-    return arr;
 
-};
 console.log('Відсортував масив в спадаючому порядку за кількістю елементів в полі modules');
-console.log(modulesDescendingSort(coursesArray));
+console.log(coursesArray.sort((a, b) =>b.modules-a.modules ));
 
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
 // document.writeln(count(str, symb)) // 5
