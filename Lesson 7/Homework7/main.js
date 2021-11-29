@@ -59,7 +59,7 @@ arrForClient[9]=new Client(77,'Izabella','Ron','bonmail@com',425521,['oranges','
 // - Взяти масив (Client [] з попереднього завдання).
 // Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 
-arrForClient.sort((a, b) =>a.order.length-b.order.length );
+arrForClient.sort(( a, b ) =>a.order.length-b.order.length );
 console.log(`Взяв масив (Client [] з попереднього завдання).
 Відсортував його по кількості товарів в полі order по зростанню. (sort)`);
 console.log(arrForClient);
