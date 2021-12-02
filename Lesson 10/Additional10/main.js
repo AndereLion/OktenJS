@@ -1,147 +1,36 @@
-// - Створити функцію-валідатор для адрес електронної пошти.
-// Перевірка повинна включати в себе :данні до знака равлика(@),
-// наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика,
-// функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
-// Протестувати на значеннях
-let email1 = 'someemail@gmail.com';
-let email2 = 'someeMAIL@gmail.com';
-let email3 = 'someeMAIL@i.ua';
-let email4 = 'some.email@gmail.com';
-let email5 = '@gmail.com';
-let email6 = 'some.emailgmail.com';
-let email7 = 'some.email@.gmail.com';
+// - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+//     При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
+//     Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 //
-// Примітка
-// Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні".
-// Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
-let emailValidation = (mail) => {
-    if (mail.indexOf('@') < 0) {
-        return 'Email повинен містити сивмол @';
-    }
-    if (mail[mail.indexOf('@') + 1] === '.') {
-        return 'Крапка повинна знаходить не менше ніж на другому символі після @'
-    }
-    if (mail.indexOf('@') <= 0) {
-        return 'Ви не ввели дані до @'
-    }
-    return `Email ${mail.toLowerCase()} is ok `;
-};
-console.log(emailValidation(email1));
-console.log(emailValidation(email2));
-console.log(emailValidation(email3));
-console.log(emailValidation(email4));
-console.log(emailValidation(email5));
-console.log(emailValidation(email6));
-console.log(emailValidation(email7));
-
-
-// - є масив
-// відсортувати його в спадаючому порядку за кількістю елементів в полі modules
-let coursesArray = [
-    {
-        title: 'JavaScript Complex',
-        monthDuration: 5,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular',
-            'aws', 'docker', 'git', 'node.js']
-    },
-    {
-        title: 'Java Complex',
-        monthDuration: 6,
-        hourDuration: 909,
-        modules: ['html',
-            'css',
-            'js',
-            'mysql',
-            'mongodb',
-            'angular',
-            'aws',
-            'docker',
-            'git',
-            'java core',
-            'java advanced']
-    },
-    {
-        title: 'Python Complex',
-        monthDuration: 6,
-        hourDuration: 909,
-        modules: ['html',
-            'css',
-            'js',
-            'mysql',
-            'mongodb',
-            'angular',
-            'aws',
-            'docker',
-            'python core',
-            'python advanced']
-    },
-    {
-        title: 'QA Complex',
-        monthDuration: 4,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-    },
-    {
-        title: 'FullStack',
-        monthDuration: 7,
-        hourDuration: 909,
-        modules: ['html',
-            'css',
-            'js',
-            'mysql',
-            'mongodb',
-            'react',
-            'angular',
-            'aws',
-            'docker',
-            'git',
-            'node.js',
-            'python',
-            'java']
-    },
-    {
-        title: 'Frontend',
-        monthDuration: 4,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws',
-            'docker', 'git', 'sass']
-    }
-];
-
-console.log('Відсортував масив в спадаючому порядку за кількістю елементів в полі modules');
-console.log(coursesArray.sort((a, b) =>b.modules-a.modules ));
-
-// - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
-// document.writeln(count(str, symb)) // 5
-let symb = "о", str = "Астрономия это наука о небесных объектах";
-let count = (str, symb) => {
-    let arr = str.split('');
-    let countSymb = 0;
-    for (let a of arr) {
-        if (a === symb) {
-            countSymb += 1;
-        }
-    }
-    return countSymb;
-};
-document.writeln(`Написав функцію count(str, stringsearch), 
-яка повертає кількість символів stringsearch у рядку str.<br> <b> ${count(str, symb)}</b>`);
-// - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
-let strForCutString = "Сила тяжести приложена к центру масс тела";
-// document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
-let cutString = (str, n) => {
-    let getCount=0;
-    for (let i = 0; i <str.length ; i++) {
-        if(str[i]===' '){
-            getCount++;
-            if(getCount===n){
-                return str.slice(0,i);
-            }
-        }
-    }
-    return 'Please enter correct number of words';
-};
-document.writeln(`<br> Написав функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів. <br><b>${cutString(strForCutString, 5)}</b>`);
-
-
+// - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+//     При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
+//     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+//
+// -- взять массив пользователей
+// let usersWithAddress = [
+//     {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//     {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+//     {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+//     {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+//     {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+//     {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+//     {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+//     {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+//     {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+//     {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//     {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+// ];
+// - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
+// 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
+// 2й - оставляет старше 29 лет включительно
+// 3й - оставляет тех у кого город киев
+// Данные выводить в документ
+//
+//
+//
+// *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
+// при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
+// НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
+//     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
+//
+//
