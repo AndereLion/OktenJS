@@ -47,8 +47,9 @@ let usersWithAddress = [
 // Фильтры могут работать как вместе так и по отдельности.
 // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
 let printResult = (arr) => {
-    console.log(arr.checked);
+
     let wrapForPrint = document.body.getElementsByClassName('wrapForPrint')[0];
+
     for (let user of arr) {
         let wrapPrintForCheckbox = document.createElement('p');
         wrapPrintForCheckbox.style.marginLeft = '10px';
@@ -67,8 +68,6 @@ let printResult = (arr) => {
                 printForCheckboxAddress.innerText += ` ${userElement}: `;
                 for (let AddressElement in user.address) {
                     printForCheckboxAddress.innerText += ` \n -${AddressElement} ${user.address[AddressElement]} `;
-
-
                 }
             }
 
@@ -80,12 +79,9 @@ let printResult = (arr) => {
 let onlyFalse = document.body.getElementsByClassName('onlyFalse')[0];
 onlyFalse.addEventListener('click', () => {
         let arrOnlyFalse = usersWithAddress.filter(value => value.status === false);
-        console.log(document.body.getElementsByClassName('wrapForPrint')[0].children.length);
-        if (document.body.getElementsByClassName('wrapForPrint')[0].children.length === 0) {
+        printResult(arrOnlyFalse);
 
-            printResult(arrOnlyFalse);
 
-        }
     }
 );
 // 2й - оставляет старше 29 лет включительно
@@ -99,11 +95,8 @@ Over29.addEventListener('click', () => {
 // 3й - оставляет тех у кого город киев
 let kyivOnly = document.body.getElementsByClassName('classKyivOnly')[0];
 kyivOnly.addEventListener('click', () => {
-
         let arrKyivOnly = usersWithAddress.filter(value => value.address.city.toLowerCase() === 'kyiv');
-
         printResult(arrKyivOnly);
-
     }
 );
 
@@ -112,17 +105,6 @@ kyivOnly.addEventListener('click', () => {
 //
 //
 //
-// *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .
-// Функция создает в боди 2 кнопки (назад/вперед)
-// при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед",
-// вы переходите к следующему дочернему элементу (лежащему на одном уровне)
-// НО если у (какого-либо)дочеренего элемента есть дети,
-// то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
-//     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему,
-//     лежащему с ним на одном уровне
-//
-//
-
 
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
@@ -143,20 +125,19 @@ let counter = 0;
 
 
 sliderLeftArrow.addEventListener('click', () => {
-
-    if (counter === -1) {
+    if (counter-- === 0) {
         counter = arrWithImages.length - 1;
     }
-    sliderImg.src = arrWithImages[counter--];
-
+    sliderImg.src = arrWithImages[counter];
 });
 
-
 sliderRightArrow.addEventListener('click', () => {
-    if (counter === arrWithImages.length - 1) {
+    if (counter++ === arrWithImages.length - 1) {
         counter = 0;
     }
-    sliderImg.src = arrWithImages[counter++];
+    console.log(counter + 'R' + 'B');
+    sliderImg.src = arrWithImages[counter];
+    console.log(counter + 'R' + 'A');
 });
 
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
@@ -172,3 +153,14 @@ pForTest.addEventListener('mousemove', (e) => {
 pForTest.addEventListener('mouseup', (e) => {
     pForTest.style.fontWeight = '200';
 });
+
+
+// *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .
+// Функция создает в боди 2 кнопки (назад/вперед)
+// при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед",
+// вы переходите к следующему дочернему элементу (лежащему на одном уровне)
+// НО если у (какого-либо)дочеренего элемента есть дети,
+// то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
+//     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему,
+//     лежащему с ним на одном уровне
+
