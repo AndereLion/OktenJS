@@ -91,36 +91,3 @@ buttonForBadWord.addEventListener('click', () => {
     }
 });
 
-// - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
-let arrWithImages = [
-    'https://www.avtovzglyad.ru/media/article/BMW_3-Series_2019.jpg.740x555_q85_box-38%2C115%2C1102%2C913_crop_detail_upscale.jpg',
-    'https://klike.net/uploads/posts/2019-05/1559021799_1.jpg',
-    'https://gr8auto.com.ua/wp-content/uploads/2019/11/bg-bmw-mobile.jpg',
-    'https://luxury-trans.com.ua/img/about_us-min.jpg',
-    'https://cdn2.autocentre.ua/wp-content/uploads/2019/05/ferrari-458-italia.jpg',
-    'https://www.iphones.ru/wp-content/uploads/2017/03/mb_gt.jpg',
-    'https://bipbap.ru/wp-content/uploads/2017/09/122916_037145701590.jpg',
-    'https://img2.goodfon.ru/wallpaper/nbig/a/42/audi-r8-avto-gold-mashina.jpg'
-];
-let sliderLeftArrow = document.getElementsByClassName('sliderLeftArrow')[0];
-let sliderRightArrow = document.getElementsByClassName('sliderRightArrow')[0];
-let sliderImg = document.getElementsByClassName('sliderImg')[0];
-let counter = 0;
-
-
-sliderLeftArrow.addEventListener('click', () => {
-
-    if (counter === -1) {
-        counter = arrWithImages.length - 1;
-    }
-    sliderImg.src = arrWithImages[counter--];
-
-});
-
-
-sliderRightArrow.addEventListener('click', () => {
-    if (counter === arrWithImages.length - 1) {
-        counter = 0;
-    }
-    sliderImg.src = arrWithImages[counter++];
-});

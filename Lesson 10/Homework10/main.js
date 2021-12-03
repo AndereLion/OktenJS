@@ -57,16 +57,3 @@ for (let comment of comments) {
         li.classList.toggle('comment');
     });
 }
-//     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
-// *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/
-// або якось іншим способом змінює свій стан
-let pForTest = document.getElementsByClassName('pForTest')[0];
-pForTest.innerText = 'Text for testing';
-pForTest.addEventListener('mousemove', (e) => {
-        pForTest.addEventListener('mousedown', () => pForTest.style.fontWeight = '900'
-        );
-    }
-);
-pForTest.addEventListener('mouseup', (e) => {
-    pForTest.style.fontWeight = '200';
-});

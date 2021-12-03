@@ -11,16 +11,4 @@ body{
 .inputRows, .inputBadWord,.sliderWrap {
     margin-top: 50px;
 }
-.sliderImg{
-   height: 300px;
-}
 
-.sliderWrap{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.sliderLeftArrow,.sliderRightArrow{
-    width: 30px;
-}

@@ -1,16 +1,19 @@
-body{
+
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.divForInfoPrint{
+.divForInfoPrint {
     width: 300px;
     height: 150px;
     background: gray;
+    
 }
-.popUpWrap{
+
+.popUpWrap {
     display: none;
     position: absolute;
     width: 33%;
@@ -19,12 +22,45 @@ body{
     left: 33%;
     top: 0px;
 }
-.on{
+
+.on {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.popUpText{
+
+.popUpText {
     font-size: 25px;
     font-weight: 700;
+}
+
+.wrapForCheckboxes {
+    margin-top: 50px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.wrapForPrint{
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pForTest{
+    margin-top: 250px;
+}
+.sliderLeftArrow,.sliderRightArrow{
+    width: 30px;
+}
+.sliderImg{
+    height: 300px;
+}
+
+.sliderWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
