@@ -66,6 +66,7 @@ let badWordChecker = (word) => {
 };
 
 let inputBadWord = document.getElementsByClassName('inputBadWord')[0];
+
 let buttonForBadWord = document.getElementsByClassName('buttonForBadWord')[0];
 buttonForBadWord.addEventListener('click', () => {
     if (badWordChecker(inputBadWord.value)) {

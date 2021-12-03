@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divForInfoPrint{
+    width: 300px;
+    height: 150px;
+    background: gray;
+}
+.popUpWrap{
+    display: none;
+    position: absolute;
+    width: 33%;
+    height: 200px;
+    background: aqua;
+    left: 33%;
+    top: 0px;
+}
+.on{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popUpText{
+    font-size: 25px;
+    font-weight: 700;
+}
