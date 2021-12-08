@@ -1,0 +1,7 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+.divForUser{
+    margin: 20px;
+}
