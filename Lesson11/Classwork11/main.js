@@ -27,6 +27,13 @@ for (let user of users) {
     }
     let buttonAddToMyFavorites = document.createElement('button');
     buttonAddToMyFavorites.addEventListener('click', () => {
+        if(localStorage.getItem('MyFavorites')){
+            console.log('hi');
+
+            favorites= JSON.parse(localStorage.getItem('MyFavorites'));
+
+        }
+
         favorites.push(user);
         localStorage.setItem('MyFavorites', JSON.stringify(favorites));
 
@@ -35,7 +42,7 @@ for (let user of users) {
     buttonAddToMyFavorites.innerText = 'To my favorites';
     div.appendChild(buttonAddToMyFavorites);
 }
-console.log(favorites);
+
 
 
 // Створити сторніку favorites.html

@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+p{
+    margin: 0;
+}
+.divForUser{
+    width: 300px;
+    margin: 20px;
+}
+.divAbsolute{
+
+
+    width: 200px;
+background: silver;
+position: absolute;
+}
+.divAbsoluteNone{
+    display: none;
+}
