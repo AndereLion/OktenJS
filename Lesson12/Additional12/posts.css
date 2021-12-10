@@ -1,13 +1,10 @@
-body{
+.divWrapForPosts{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-p{
-    margin: 0;
-}
-.divForUser{
-    width: 300px;
+.divForPost{
+    width: 15%;
     margin: 20px;
 }
-

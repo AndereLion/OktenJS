@@ -1,13 +1,10 @@
-body{
+.divWrapForComments{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-p{
-    margin: 0;
-}
-.divForUser{
-    width: 300px;
+.divForComment{
+    width: 15%;
     margin: 20px;
 }
-
