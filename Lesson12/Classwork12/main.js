@@ -7,6 +7,8 @@ let requestURL = 'https://jsonplaceholder.typicode.com/posts';
 const xhr = new XMLHttpRequest();
 xhr.open('GET', requestURL);
 xhr.onload = () => {
+
+
     for (let user of JSON.parse(xhr.response)) {
         let divForUser = document.createElement('div');
         divForUser.classList.add('divForUser');
@@ -18,37 +20,13 @@ xhr.onload = () => {
         }
         let divAbsolute = document.createElement("div");
         let button = document.createElement('button');
-        button.innerText = 'button';
+        button.innerText = 'To comments';
         divForUser.appendChild(button);
+
+
         button.addEventListener('click', (e) => {
-            let d = document.getElementsByClassName('divAbsolute');
-            if (d[0]) {
-                d[0].innerHTML = '';
-                document.body.removeChild(d[0]);
-            }
-            document.body.appendChild(divAbsolute);
-            divAbsolute.classList.toggle('divAbsolute');
-            if (d[0]) {
-                divAbsolute.style.left = `${e.pageX + 50}px`;
-                divAbsolute.style.top = `${e.pageY - 150}px`;
-                fetch('https://jsonplaceholder.typicode.com/comments')
-                    .then(response => {
-                        return response.json();
-                    })
-                    .then(comments => {
-
-                        for (let comment of comments) {
-                            if (comment.id === user.id) {
-                                let p = document.createElement('p');
-                                p.innerText = `-${comment.body} `;
-                                divAbsolute.appendChild(p);
-                            }
-                        }
-
-
-                    });
-
-            }
+            localStorage.setItem('Post', JSON.stringify(user));
+            window.location.href = 'posts.html';
         });
     }
 };

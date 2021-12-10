@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.divWrapForComments{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+}
+.divForComment{
+    margin: 20px;
+    width: 15%;
+}
