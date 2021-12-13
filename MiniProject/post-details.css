@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.divForUserPost {
+    background: silver;
+    text-align: center;
+    width: 100%;
+}
+
+.divWrapForComments {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.divForComment {
+    width: 250px;
+    background: silver;
+    margin: 20px;
+
+}

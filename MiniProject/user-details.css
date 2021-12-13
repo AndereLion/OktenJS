@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.divUserInfo{
+    text-align: center;
+    width: 500px;
+    margin: 20px;
+}
+.buttonPostOfCurrentUser{
+    width: 90%;
+}
+.divForPostsWrap{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.divForPost{
+    width: 250px;
+    margin: 20px;
+    background: silver;
+}
